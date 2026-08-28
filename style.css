@@ -274,3 +274,26 @@ body {
 #spirit-input { width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem; color: var(--text); margin-bottom: 0.8rem; outline: none; font-family: inherit; }
 .spirit-actions { display: flex; gap: 0.5rem; justify-content: flex-end; }
 .spirit-actions button { background: var(--copper); border: none; color: #fff; padding: 0.5rem 1rem; border-radius: 12px; cursor: pointer; }
+/* ===== 新增：视觉分类大目录 ===== */
+.category-gallery { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1.5rem 0; }
+.cat-item {
+    background: linear-gradient(135deg, rgba(45,31,29,0.9), rgba(20,16,19,0.9));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 130px;
+}
+.cat-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--copper);
+    box-shadow: 0 8px 20px rgba(168, 95, 58, 0.3);
+}
+.cat-icon { font-size: 2.2rem; }
+.cat-name { color: var(--gold); font-size: 1rem; font-weight: bold; letter-spacing: 1px; }
+.cat-sub { color: var(--text2); font-size: 0.7rem; }
