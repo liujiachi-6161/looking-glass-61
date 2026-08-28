@@ -334,6 +334,7 @@ function bindEvents() {
 }
 
 function switchView(view) {
+        window.scrollTo(0, 0); // 每次切换页面自动滚到顶部，避免“没动”的错觉
     currentView = view;
     document.querySelectorAll('[data-view]').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.view === view);
