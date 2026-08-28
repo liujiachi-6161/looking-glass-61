@@ -29,35 +29,15 @@
                 <button class="btn" id="dailyBtn">🌅 每日一抽</button>
             </div>
 
-            <!-- 首页（深邃魔法入口） -->
-            <div class="view-section active" id="homeView">
-                <div class="home-hero">
-                    <h1>✦ 吉普赛之眼 <span>· 暗忆</span></h1>
-                    <p>潜入暗夜，聆听牌的密语</p>
-                </div>
-                <div class="home-menu">
-                    <div class="home-card" onclick="switchView('browse')">
-                        <div class="home-icon">🔮</div>
-                        <div class="home-title">浏览牌库</div>
-                        <div class="home-desc">78张牌全解析，寻找你的指引</div>
-                    </div>
-                    <div class="home-card" onclick="switchView('draw')">
-                        <div class="home-icon">🎴</div>
-                        <div class="home-title">洗牌抽牌</div>
-                        <div class="home-desc">点击牌堆，感受当下的能量</div>
-                    </div>
-                    <div class="home-card" onclick="switchView('spread')">
-                        <div class="home-icon">📐</div>
-                        <div class="home-title">牌阵占卜</div>
-                        <div class="home-desc">从过去到未来，探寻命运的轨迹</div>
-                    </div>
-                    <div class="home-card" onclick="openLibrary()">
-                        <div class="home-icon">📚</div>
-                        <div class="home-title">资料图书馆</div>
-                        <div class="home-desc">数字、元素、星座与符号的奥秘</div>
-                    </div>
-                </div>
-            </div>
+            <!-- 首页（星空深邃入口） -->
+<div class="view-section active" id="homeView">
+    <div class="stars"></div>
+    <div class="black-hole">
+        <h1>吉普赛之眼</h1>
+        <p>潜入暗夜 · 聆听密语</p>
+        <button class="btn-enter" onclick="switchView('browse')">✦ 进入暗夜 ✦</button>
+    </div>
+</div>
 
             <!-- 浏览 -->
             <div class="view-section" id="browseView">
