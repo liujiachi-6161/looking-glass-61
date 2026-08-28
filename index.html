@@ -18,8 +18,10 @@
                 <h1>✦ 吉普赛 <span>· 暗忆</span></h1>
             </div>
 
+            <!-- 顶部导航 -->
             <div class="toolbar">
-                <button class="btn active" data-view="browse">🔮 浏览牌库</button>
+                <button class="btn active" data-view="home">🏠 首页</button>
+                <button class="btn" data-view="browse">🔮 浏览牌库</button>
                 <button class="btn" data-view="draw">🎴 洗牌抽牌</button>
                 <button class="btn" data-view="spread">📐 牌阵占卜</button>
                 <button class="btn" data-view="history">📜 历史记录</button>
@@ -27,8 +29,38 @@
                 <button class="btn" id="dailyBtn">🌅 每日一抽</button>
             </div>
 
+            <!-- 首页（深邃魔法入口） -->
+            <div class="view-section active" id="homeView">
+                <div class="home-hero">
+                    <h1>✦ 吉普赛之眼 <span>· 暗忆</span></h1>
+                    <p>潜入暗夜，聆听牌的密语</p>
+                </div>
+                <div class="home-menu">
+                    <div class="home-card" onclick="switchView('browse')">
+                        <div class="home-icon">🔮</div>
+                        <div class="home-title">浏览牌库</div>
+                        <div class="home-desc">78张牌全解析，寻找你的指引</div>
+                    </div>
+                    <div class="home-card" onclick="switchView('draw')">
+                        <div class="home-icon">🎴</div>
+                        <div class="home-title">洗牌抽牌</div>
+                        <div class="home-desc">点击牌堆，感受当下的能量</div>
+                    </div>
+                    <div class="home-card" onclick="switchView('spread')">
+                        <div class="home-icon">📐</div>
+                        <div class="home-title">牌阵占卜</div>
+                        <div class="home-desc">从过去到未来，探寻命运的轨迹</div>
+                    </div>
+                    <div class="home-card" onclick="openLibrary()">
+                        <div class="home-icon">📚</div>
+                        <div class="home-title">资料图书馆</div>
+                        <div class="home-desc">数字、元素、星座与符号的奥秘</div>
+                    </div>
+                </div>
+            </div>
+
             <!-- 浏览 -->
-            <div class="view-section active" id="browseView">
+            <div class="view-section" id="browseView">
                 <div class="toolbar filter-bar">
                     <button class="btn active" data-filter="all">全部</button>
                     <button class="btn" data-filter="major">大阿卡纳</button>
@@ -37,14 +69,14 @@
                     <button class="btn" data-filter="swords">宝剑</button>
                     <button class="btn" data-filter="pentacles">星币</button>
                 </div>
-            <!-- 视觉分类大目录 -->
+                <!-- 视觉分类大目录 -->
                 <div class="category-gallery">
-                <div class="cat-item" onclick="setFilter('major')"><span class="cat-icon">🏛️</span><span class="cat-name">大阿卡纳</span><span class="cat-sub">22张·核心旅程</span></div>
-                <div class="cat-item" onclick="setFilter('wands')"><span class="cat-icon">🔥</span><span class="cat-name">权杖</span><span class="cat-sub">14张·行动与热情</span></div>
-                <div class="cat-item" onclick="setFilter('cups')"><span class="cat-icon">💧</span><span class="cat-name">圣杯</span><span class="cat-sub">14张·情感与直觉</span></div>
-                <div class="cat-item" onclick="setFilter('swords')"><span class="cat-icon">💨</span><span class="cat-name">宝剑</span><span class="cat-sub">14张·思维与冲突</span></div>
-                <div class="cat-item" onclick="setFilter('pentacles')"><span class="cat-icon">🌍</span><span class="cat-name">星币</span><span class="cat-sub">14张·物质与现实</span></div>
-</div>
+                    <div class="cat-item" onclick="setFilter('major')"><span class="cat-icon">🏛️</span><span class="cat-name">大阿卡纳</span><span class="cat-sub">22张·核心旅程</span></div>
+                    <div class="cat-item" onclick="setFilter('wands')"><span class="cat-icon">🔥</span><span class="cat-name">权杖</span><span class="cat-sub">14张·行动与热情</span></div>
+                    <div class="cat-item" onclick="setFilter('cups')"><span class="cat-icon">💧</span><span class="cat-name">圣杯</span><span class="cat-sub">14张·情感与直觉</span></div>
+                    <div class="cat-item" onclick="setFilter('swords')"><span class="cat-icon">💨</span><span class="cat-name">宝剑</span><span class="cat-sub">14张·思维与冲突</span></div>
+                    <div class="cat-item" onclick="setFilter('pentacles')"><span class="cat-icon">🌍</span><span class="cat-name">星币</span><span class="cat-sub">14张·物质与现实</span></div>
+                </div>
                 <div class="search-box">
                     <input type="text" class="search-input" id="searchInput" placeholder="搜索牌名..." />
                 </div>
@@ -64,16 +96,19 @@
             </div>
 
             <!-- 牌阵 -->
-                        <div class="spread-selector" id="spreadSelector">
-                <button class="btn active" data-spread="three">三牌阵</button>
-                <button class="btn" data-spread="heartVoice">心之声</button>
-                <button class="btn" data-spread="relationship">关系牌阵</button>
-                <button class="btn" data-spread="choice">二选一</button>
-                <button class="btn" data-spread="breakupReunion">分手复合</button>
-                <button class="btn" data-spread="loversVenus">恋人维纳斯</button>
-                <button class="btn" data-spread="loversCross">恋人十字</button>
-                <button class="btn" data-spread="celtic">凯尔特十字</button>
-            </div>
+            <div class="view-section" id="spreadView">
+                <div class="draw-area">
+                    <h3 style="color:var(--gold);margin-bottom:0.5rem;">📐 牌阵占卜</h3>
+                    <div class="spread-selector" id="spreadSelector">
+                        <button class="btn active" data-spread="three">三牌阵</button>
+                        <button class="btn" data-spread="heartVoice">心之声</button>
+                        <button class="btn" data-spread="relationship">关系牌阵</button>
+                        <button class="btn" data-spread="choice">二选一</button>
+                        <button class="btn" data-spread="breakupReunion">分手复合</button>
+                        <button class="btn" data-spread="loversVenus">恋人维纳斯</button>
+                        <button class="btn" data-spread="loversCross">恋人十字</button>
+                        <button class="btn" data-spread="celtic">凯尔特十字</button>
+                    </div>
                     <div class="deck" id="spreadDeck" style="width:100px;height:140px;">
                         <div class="deck-icon">🃏</div>
                         <div class="deck-count" id="spreadCount">3 张</div>
